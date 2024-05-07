@@ -1,0 +1,21 @@
+---
+apiVersion: gateway.mulesoft.com/v1alpha1
+kind: Extension
+metadata:
+  labels:
+    title: tracking-logger-policy
+    category: Custom
+spec:
+  extends:
+    - name: extension-definition
+      namespace: default
+  properties:
+    startHeaderName:
+      type: string
+      default: tracking-start-time
+    endHeaderName:
+      type: string
+      default: tracking-end-time
+  required:
+    - startHeaderName
+    - endHeaderName
